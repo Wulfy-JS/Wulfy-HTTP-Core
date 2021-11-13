@@ -1,0 +1,13 @@
+{
+  "name": "red-project-httpcore",
+  "version": "1.0.0",
+  "description": "",
+  "main": "core.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "80LK",
+  "license": "MIT",
+  "dependencies": {}
+}
