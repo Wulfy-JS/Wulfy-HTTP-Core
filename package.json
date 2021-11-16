@@ -1,6 +1,6 @@
 {
-  "name": "red-project-httpcore",
-  "version": "1.0.0",
+  "name": "red-project-httpcore-t",
+  "version": "1.0.1",
   "description": "",
   "main": "core.js",
   "type": "module",
@@ -9,5 +9,11 @@
   },
   "author": "80LK",
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "red-project-t": "^1.0.1"
+  },
+  "peerDependencies": {
+    "red-project-t": "^1.0.1"
+  }
 }
