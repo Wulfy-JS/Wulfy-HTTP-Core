@@ -1,6 +1,6 @@
 {
   "name": "red-project-httpcore",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Red Project HTTPCore",
   "main": "core.js",
   "type": "module",
