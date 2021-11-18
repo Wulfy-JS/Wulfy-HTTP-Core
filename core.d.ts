@@ -1,4 +1,4 @@
-import Core from "red-project-t";
+import Core from "red-project";
 
 declare abstract class HttpCore extends Core {
 	constructor(port?: number);

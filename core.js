@@ -1,4 +1,4 @@
-import Core from "red-project-t";
+import Core from "red-project";
 import { createServer } from "http";
 
 class HttpCore extends Core {
