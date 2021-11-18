@@ -2,11 +2,8 @@ import Core from "red-project";
 import { createServer } from "http";
 
 class HttpCore extends Core {
-	constructor(port = 80) {
-		super();
-		this.port = port;
-	}
 	__init() {
+		this.port = this.config.get("port", 80);
 		this.server = createServer();
 		this.server.on("request", (req, res) => {
 			this.response(req, res);
