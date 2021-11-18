@@ -14,6 +14,6 @@
     "red-project": "^1.0.1"
   },
   "peerDependencies": {
-    "red-project-t": "^1.0.1"
+    "red-project": "^1.0.1"
   }
 }
