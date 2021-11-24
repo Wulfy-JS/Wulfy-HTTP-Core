@@ -11,7 +11,8 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "red-project": "^1.0.1"
+    "red-project": "^1.0.1",
+    "typescript": "^4.5.2"
   },
   "peerDependencies": {
     "red-project": "^1.0.1"
