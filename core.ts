@@ -1,4 +1,4 @@
-import Core from "red-project";
+import Core from "wulfy";
 import { createServer, Server } from "http";
 
 declare module "http" {

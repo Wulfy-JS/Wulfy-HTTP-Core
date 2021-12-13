@@ -1,7 +1,8 @@
 {
-  "name": "red-project-httpcore",
-  "version": "1.0.4",
+  "name": "wulfy-http-core",
+  "version": "0.1.1",
   "description": "Red Project HTTPCore",
+  "repository": "https://github.com/Wulfy-JS/Wulfy-HTTP-Core",
   "main": "core.js",
   "type": "module",
   "scripts": {
@@ -9,12 +10,11 @@
   },
   "author": "80LK",
   "license": "MIT",
-  "dependencies": {},
   "devDependencies": {
-    "red-project": "^1.0.1",
-    "typescript": "^4.5.2"
+    "typescript": "^4.5.2",
+    "wulfy": "^0.1.1"
   },
   "peerDependencies": {
-    "red-project": "^1.0.1"
+    "wulfy": "^0.1.1"
   }
 }
