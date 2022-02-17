@@ -3,7 +3,7 @@
   "version": "0.1.2",
   "description": "Red Project HTTPCore",
   "repository": "https://github.com/Wulfy-JS/Wulfy-HTTP-Core",
-  "main": "core.js",
+  "main": "dist/core.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,9 +12,9 @@
   "license": "MIT",
   "devDependencies": {
     "typescript": "^4.5.2",
-    "wulfy": "^0.1.1"
+    "wulfy": "^0.2.0"
   },
   "peerDependencies": {
-    "wulfy": "^0.1.1"
+    "wulfy": "^0.2.0"
   }
 }

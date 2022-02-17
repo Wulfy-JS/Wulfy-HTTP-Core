@@ -74,5 +74,7 @@ typings/
 
 # FuseBox cache
 .fusebox/
-core.d.ts
-core.js
+
+# project
+dist
+types
