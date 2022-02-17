@@ -4,6 +4,7 @@
   "description": "Wulfy HTTPCore",
   "repository": "https://github.com/Wulfy-JS/Wulfy-HTTP-Core",
   "main": "dist/core.js",
+  "types": "types",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
