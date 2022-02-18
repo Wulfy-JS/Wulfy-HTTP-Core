@@ -14,7 +14,7 @@ abstract class HTTPCore extends Core {
 	private server?: Server;
 
 	protected init() {
-		this.port = 8080;
+		this.port = parseInt(process.env.PORT) || 80;
 		this.server = createServer();
 		this.server.on("request", (req, res) => {
 			req.body = "";
