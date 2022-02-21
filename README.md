@@ -32,8 +32,12 @@ SEC_KEY="path/to/public.key"
 ## If the specified file is not found, the server will not be created.
 SEC_CERT="path/to/public.cert" 
 
+
 # Port for HTTPS server. Default = 443
 SEC_PORT=443 
+
+# Set true, if you want redirect to HTTPS
+SEC_REDIERCT=true
 # Set domain for redirect, if user not send host in headers
 HOST="localhost"
 ```
