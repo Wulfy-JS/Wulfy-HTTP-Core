@@ -3,8 +3,8 @@
   "version": "0.2.6",
   "description": "Wulfy HTTPCore",
   "repository": "https://github.com/Wulfy-JS/Wulfy-HTTP-Core",
-  "main": "dist/core.js",
-  "types": "types/core.d.ts",
+  "main": "dist/index.js",
+  "types": "types/index.d.ts",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
