@@ -12,6 +12,8 @@ abstract class Server {
 
 	public constructor() {
 		this.server = this.createServer();
+		this.onListen = this.onListen.bind(this);
+		this.onClose = this.onClose.bind(this);
 	}
 
 	public onRequest(callback: (req: IncomingMessage, res: ServerResponse) => Promise<void> | void) {
