@@ -10,6 +10,7 @@ class HttpCore extends Core {
 	private secServer: HttpsServer;
 
 	protected init() {
+		this.requestHandler = this.requestHandler.bind(this);
 		this.server = new HttpServer();
 		if (HttpsServer.canCreate()) {
 			this.secServer = new HttpsServer();
