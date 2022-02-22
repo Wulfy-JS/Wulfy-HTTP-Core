@@ -65,13 +65,13 @@ class HttpCore extends Core {
 	protected __start() {
 		if (!this.server) return;
 		this.server.listen();
-		if (!this.secServer) this.secServer.listen();
+		if (this.secServer) this.secServer.listen();
 	}
 
 	protected __stop() {
 		if (!this.server) return;
 		this.server.close();
-		if (!this.secServer) this.secServer.close();
+		if (this.secServer) this.secServer.close();
 	}
 }
 
