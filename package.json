@@ -1,6 +1,6 @@
 {
   "name": "wulfy-http-core",
-  "version": "0.2.10",
+  "version": "0.2.11",
   "description": "Wulfy HTTPCore",
   "repository": "https://github.com/Wulfy-JS/Wulfy-HTTP-Core",
   "main": "dist/index.js",
