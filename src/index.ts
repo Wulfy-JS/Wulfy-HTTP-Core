@@ -1,6 +1,7 @@
 import { Core, Request, Logger } from "wulfy";
 import { Readable } from "stream";
 import { IncomingMessage, ServerResponse } from "http";
+import { normalize } from "path";
 
 import HttpServer from "./Server/HttpServer";
 import HttpsServer from "./Server/HttpsServer";
@@ -21,7 +22,15 @@ class HttpCore extends Core {
 					const host = req.headers.host || process.env.HOST;
 					if (host) {
 						res.statusCode = 308;
-						res.setHeader("Location", "https://" + host + "/" + req.url);
+
+						const getRedirectHost = (host) => {
+							host = host.split(":")[0];
+							if (process.env.SEC_PORT !== "443") {
+								host += ":" + process.env.SEC_PORT;
+							}
+						}
+
+						res.setHeader("Location", "https://" + normalize(getRedirectHost(host) + "/" + req.url));
 						res.end();
 						return;
 					} else {
