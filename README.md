@@ -38,6 +38,8 @@ SEC_PORT=443
 
 # Set true, if you want redirect to HTTPS
 SEC_REDIERCT=true
+# HTTP-Code for redirect to HTTPS. Default - 308 
+SEC_REDIERCT_CODE=308
 # Set domain for redirect, if user not send host in headers
 HOST="localhost"
 ```

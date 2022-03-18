@@ -21,13 +21,14 @@ class HttpCore extends Core {
 				if (process.env.SEC_REDIERCT && process.env.SEC_REDIERCT.toLowerCase() === "true") {
 					const host = req.headers.host || process.env.HOST;
 					if (host) {
-						res.statusCode = 308;
+						res.statusCode = parseInt(process.env.SEC_REDIERCT_CODE) || 308;
 
 						const getRedirectHost = (host) => {
 							host = host.split(":")[0];
 							if (process.env.SEC_PORT !== "443") {
 								host += ":" + process.env.SEC_PORT;
 							}
+							return host;
 						}
 
 						res.setHeader("Location", "https://" + normalize(getRedirectHost(host) + "/" + req.url));
