@@ -3,7 +3,7 @@ import { Logger } from "wulfy";
 
 declare module "http" {
 	interface IncomingMessage {
-		body: string;
+		body: Buffer;
 	}
 }
 
@@ -18,8 +18,12 @@ abstract class Server {
 
 	public onRequest(callback: (req: IncomingMessage, res: ServerResponse) => Promise<void> | void) {
 		this.server.on("request", (req, res) => {
-			req.body = "";
-			req.on("data", c => req.body += c);
+			req.body = Buffer.alloc(0);
+			req.on("data", data => {
+				if (!Buffer.isBuffer(data)) data = Buffer.from(data);
+
+				req.body = Buffer.concat([req.body, data], req.body.length + data.length);
+			});
 			req.on("end", async () => {
 				await callback(req, res);
 				Logger.info(`${req.method} ${req.url} HTTP/${req.httpVersion} ${res.statusCode} ${req.headers['user-agent'] || "-"}`);

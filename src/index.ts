@@ -6,6 +6,12 @@ import { normalize } from "path";
 import HttpServer from "./Server/HttpServer";
 import HttpsServer from "./Server/HttpsServer";
 
+declare module 'wulfy' {
+	interface Request {
+		secure?: true;
+	}
+}
+
 class HttpCore extends Core {
 	private server: HttpServer;
 	private secServer: HttpsServer;
@@ -15,7 +21,7 @@ class HttpCore extends Core {
 		this.server = new HttpServer();
 		if (HttpsServer.canCreate()) {
 			this.secServer = new HttpsServer();
-			this.secServer.onRequest(this.requestHandler);
+			this.secServer.onRequest((req, res) => this.requestHandler(req, res, true));
 
 			this.server.onRequest((req, res) => {
 				if (process.env.SEC_REDIERCT && process.env.SEC_REDIERCT.toLowerCase() === "true") {
@@ -46,14 +52,15 @@ class HttpCore extends Core {
 
 	}
 
-	protected async requestHandler(req: IncomingMessage, res: ServerResponse) {
+	protected async requestHandler(req: IncomingMessage, res: ServerResponse, secure = false) {
 		const request: Request = {
 			headers: req.headers,
 			method: req.method || "get",
 			path: req.url || "/",
 			body: req.body || ""
 		};
-
+		if (secure === true)
+			request.secure = true;
 		const response = await this.getResponse(request);
 
 		const headers = response.getHeaders();
